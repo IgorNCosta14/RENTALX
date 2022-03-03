@@ -6,13 +6,19 @@ import swaggerUi from "swagger-ui-express";
 
 import "./database";
 import "./shared/container";
-import { router } from "./routes";
-import swaggerFile from "./swagger.json";
+
 import { AppError } from "./errors/AppError";
+import swaggerFile from "./swagger.json";
+
+import { router } from "./routes";
 
 const app = express();
 
 app.use(express.json());
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+app.use(router);
 
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
@@ -26,9 +32,5 @@ app.use(
     });
   }
 );
-
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
-
-app.use(router);
 
 app.listen(3333, () => console.log("Server is running!"));
