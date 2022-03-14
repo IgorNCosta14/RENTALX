@@ -7,9 +7,9 @@ import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 
 import "../typeorm";
-import "../../container";
+import "@shared/container";
 
-import { AppError } from "../../errors/AppError";
+import { AppError } from "@shared/errors/AppError";
 import swaggerFile from "../../../swagger.json";
 
 import { router } from "./routes";
