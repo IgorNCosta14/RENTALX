@@ -8,12 +8,12 @@ import swaggerUi from "swagger-ui-express";
 
 import "../typeorm";
 
-import { AppError } from "@shared/errors/AppError";
+import { AppError } from "../../errors/AppError";
 import swaggerFile from "../../../swagger.json";
 
 import { router } from "./routes";
 
-import "@shared/container";
+import "../../container";
 
 const app = express();
 
