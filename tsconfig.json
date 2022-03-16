@@ -10,7 +10,7 @@
 
     "outDir": "./dist",
 
-    "baseUrl": "./src",
+    "baseUrl": "./",
 
     /*"paths": {
       "@modules/*": ["modules/*"],
