@@ -10,15 +10,15 @@
 
     "outDir": "./dist",
 
-    "baseUrl": "./",
+    "baseUrl": "./src",
 
-    /*"paths": {
+    "paths": {
       "@modules/*": ["modules/*"],
       "@config/*": ["config/*"],
       "@shared/*": ["shared/*"],
       "@errors/*": ["shared/errors/*"],
       "@utils/*": ["utils/*"]
-    },*/
+    },
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
