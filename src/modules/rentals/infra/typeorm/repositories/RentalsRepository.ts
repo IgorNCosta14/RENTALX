@@ -31,7 +31,7 @@ class RentalsRepository implements IRentalsRepository {
       expected_return_date,
     });
 
-    this.repository.save(rental);
+    await this.repository.save(rental);
 
     return rental;
   }
