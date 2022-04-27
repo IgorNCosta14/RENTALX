@@ -4,7 +4,7 @@
         "title": "RentalX Documentation",
         "description": "This is an API Rent",
         "version": "1.0.0",
-        "cantact": {
+        "contact": {
             "email": "igorncosta14@gmail.com"
         }
     },
@@ -15,7 +15,12 @@
                     "Category"
                 ],
                 "summary": "Create a category",
-                "desciption": "Create a category",
+                "description": "Create a category",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -31,7 +36,7 @@
                                 },
                                 "example": {
                                     "name": "category name sample",
-                                    "description": "Category secription sample"
+                                    "description": "Category description sample"
                                 }
                             }
                         }
@@ -42,7 +47,7 @@
                         "description": "Created"
                     },
                     "500": {
-                        "description": "Caregory already exists"
+                        "description": "Category already exists"
                     }
                 }
             },
@@ -50,8 +55,8 @@
                 "tags": [
                     "Category"
                 ],
-                "summary": "List all caregories",
-                "description": "List all caregories",
+                "summary": "List all categories",
+                "description": "List all categories",
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -127,6 +132,38 @@
                     }
                 }
             }
+        },
+        "/sessions": {
+                "post": {
+                    "tags": ["Session"],
+                    "Summary": "Authentication user",
+                    "description": "Authentication user",
+                    "requestBody": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "password": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "Success"
+                        },
+                        "400": {
+                            "description": "Email or password incorrect!"
+                        }
+                    }
+            }
         }
     },
     "definitions": {
@@ -139,6 +176,15 @@
                 "description": {
                     "type": "string"
                 }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
             }
         }
     }
