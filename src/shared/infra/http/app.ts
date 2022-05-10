@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import "reflect-metadata";
+import "dotenv/config";
 
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
