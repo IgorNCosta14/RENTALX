@@ -39,7 +39,7 @@ class AuthenticateUserUseCase {
     const user = await this.usersRepository.findByEmail(email);
     const {
       expires_in_token,
-      secret_Token,
+      secret_token,
       secret_refresh_token,
       expires_in_refresh_token,
       refresh_token_expires_days,
@@ -55,7 +55,7 @@ class AuthenticateUserUseCase {
       throw new AppError("Email or password incorrect");
     }
 
-    const token = sign({}, secret_Token, {
+    const token = sign({}, secret_token, {
       subject: user.id,
       expiresIn: expires_in_token,
     });
