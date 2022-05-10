@@ -34,7 +34,7 @@ describe("List Category Controller", () => {
 
     console.log(responseToken.body);
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     await request(app)
       .post("/categories")
@@ -42,7 +42,7 @@ describe("List Category Controller", () => {
         name: "Category Supertest",
         description: "Category Supertest",
       })
-      .set({ Authorization: `Bearer ${token}` });
+      .set({ Authorization: `Bearer ${refresh_token}` });
 
     const response = await request(app).get("/categories");
 
