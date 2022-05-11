@@ -2,8 +2,9 @@ node_modules
 .vscode
 docker-compose.yml
 yarn.lock
-tmp
-README.md
+tmp/*
 dist
 yarn-error.log
 .env
+!tmp/.gitkeep
+ormconfig.json
