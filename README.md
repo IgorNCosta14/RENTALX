@@ -1,7 +1,9 @@
 **RF** => Requisitos funcionais
 - São as funcionalidades que a aplicação vai poder ter
+
 **RNF** => Requisitos não funcionais
 - São requisitos que não estão ligados diretamente à aplicação
+
 **RN** => Regra de negócio
 - São as regras por trás dos requisitos
 
