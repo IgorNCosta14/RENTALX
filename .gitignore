@@ -1,6 +1,5 @@
 node_modules
 .vscode
-docker-compose.yml
 tmp/*
 dist
 yarn-error.log
